@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class StringsFromFile {
-    public ArrayDeque <String> getStringArrayList (){
+    public ArrayDeque <String> getStringsByLines (){
         ArrayDeque <String> strings = new ArrayDeque<>();
         try {
             Scanner scanner = new Scanner (new File("src/main/resources/file.txt"));
@@ -22,14 +22,14 @@ public class StringsFromFile {
         return null;
     }
 
-    public  List<String>  reverseStringArrayList ( ArrayDeque<String> strings) {
+    public  List<String>  reverseStringsByLines ( ArrayDeque<String> strings) {
         List<String> reversedList = new ArrayList<>();
         while (strings.peekLast() != null) {
             reversedList.add(strings.pollLast());
         }
         return reversedList;
     }
-    public  List<String>  sortByLength ( ArrayDeque<String> strings) {
+    public  List<String>  sortStringsByLength ( ArrayDeque<String> strings) {
         return strings.stream().sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
     }
 
